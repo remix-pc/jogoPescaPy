@@ -20,9 +20,6 @@ except ValueError:
     input("Aperte qualquer tecla e depois abra novamente o jogo.")
     sys.exit()
     
-
-
-
 os.system('cls')
 
 def table():
