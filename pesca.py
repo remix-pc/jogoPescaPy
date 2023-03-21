@@ -37,9 +37,6 @@ positions = None
 
 fishTanks = list(range(nFish))
 
-
-
-
 for i in range(nFish):
     positions = f'{randrange(10)} {randrange(6)}'
     alreadyHas = False
@@ -52,7 +49,6 @@ for i in range(nFish):
         fishTanks[i] = positions
     else:
         i -= 1
-
 
 #Game
 
@@ -67,7 +63,13 @@ for i in range(nGames):
     print(f'RODADA: {roundGame + 1}')
     for x in range(nPlayers):
         print(f'{listPlayers[x]} é a sua vez! ')
-        game = input("Insira a posição (x y) sem ponto ou virgula exemplo(3 5): ")
+        while True:
+            game = input("Insira a posição (x y) sem ponto ou virgula exemplo(3 5): ")
+            if game == "":
+                print("Por favor insira um valor.")
+            else:
+                question = False
+                break
 
         for b in range(len(fishTanks) + 1):
             if(fishTanks[b] == game):
@@ -117,13 +119,4 @@ else:
     print("Ninguém conseguiu pescar 1 peixe.")
 
 print("\n")
-
-
-
-
-
-
-
-    
-
-
+input("Pressione qualquer tecla para fechar o jogo")
